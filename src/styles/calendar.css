@@ -1,0 +1,66 @@
+/* Booking calendar grid and day-cell states. Layout around it is Tailwind in the components. */
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.cal-dow {
+  text-align: center;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+  padding-bottom: 6px;
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  border: 0;
+  background: transparent;
+  border-radius: 5px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.cal-day:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+
+.cal-day:disabled {
+  color: var(--ink-3);
+  opacity: 0.4;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.cal-day--blank {
+  visibility: hidden;
+}
+
+.cal-day--mid {
+  background: var(--brand-soft);
+  border-radius: 0;
+}
+
+.cal-day--pick,
+.cal-day--pick:hover:not(:disabled) {
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+}
+
+.cal-day--start {
+  border-radius: 5px 0 0 5px;
+}
+
+.cal-day--end {
+  border-radius: 0 5px 5px 0;
+}

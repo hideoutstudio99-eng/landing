@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "../styles/theme.css";
+@import "../styles/reveal.css";
+@import "../styles/calendar.css";
+
+@layer base {
+  body {
+    @apply bg-ground font-sans text-[16.5px] leading-[1.6] text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-bold uppercase leading-[1.02] tracking-[.01em] text-balance;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 11vw, 7rem);
+    letter-spacing: -0.005em;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 4.4vw, 2.9rem);
+  }
+
+  h3 {
+    font-size: 1.12rem;
+    letter-spacing: 0.05em;
+  }
+
+  p {
+    @apply text-ink-2;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+  }
+}
+
+/* Vertical rhythm shared by every content section. */
+@utility py-section {
+  padding-block: clamp(52px, 8vw, 96px);
+}
